@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="description" content="Angie Nails — Manicurista profesional en Lima. Uñas acrílicas, Polygel, Manicura rusa y Nail Art artístico con acabado de lujo. ¡Agenda tu cita hoy!" />
+  <meta name="keywords" content="uñas acrílicas lima, polygel, manicura profesional, nail art, diseño de uñas, Angie Nails" />
+  <meta name="author" content="Angie Nails" />
+  
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://angienails.ar/" />
+  <meta property="og:title" content="Angie Nails — Arte en tus manos" />
+  <meta property="og:description" content="Diseños exclusivos y técnicas de vanguardia en manicura profesional en Lima. Look de lujo garantizado." />
+  <meta property="og:image" content="./img/foto-1.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="Angie Nails — Arte en tus manos" />
+  <meta property="twitter:description" content="Diseños exclusivos y técnicas de vanguardia en manicura profesional en Lima." />
+  <meta property="twitter:image" content="./img/foto-1.jpg" />
+
+  <title>Angie Nails — Arte en tus manos</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- PRE-LOADER LUXE -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">Angie <span>Nails</span></div>
+      <div class="preloader-line"></div>
+      <div class="preloader-text">Arte en tus manos</div>
+    </div>
+  </div>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#" class="nav-logo">Angie <span>Nails</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" onclick="closeMenu()">Nosotros</a></li>
+      <li><a href="#services" onclick="closeMenu()">Servicios</a></li>
+      <li><a href="#gallery" onclick="closeMenu()">Galería</a></li>
+      <li><a href="#faq" onclick="closeMenu()">Dudas</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg-decor">
+      <div class="hero-bg-circle"></div>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">✦ Arte &amp; Elegancia en cada detalle</p>
+      <h1 class="hero-title">
+        El arte<br />
+        <em>nace</em> en<br />
+        tus manos
+      </h1>
+      <p class="hero-subtitle">
+        Diseños únicos, técnicas premium y una experiencia que transforma cada
+        sesión en un ritual de lujo.
+      </p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Reservar cita</a>
+        <a href="#gallery" class="btn-secondary">Ver galería →</a>
+      </div>
+      <div class="hero-decor-tag">
+        <div class="hero-decor-line"></div>
+        <span>Lima, Perú</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <!-- Mancha de color de fondo -->
+      <div class="hero-blob"></div>
+
+      <!-- Arco dorado superior derecho -->
+      <div class="hero-arc hero-arc--top">
+        <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#B8965A" stop-opacity="0" />
+              <stop offset="50%" stop-color="#D4AF6E" stop-opacity="1" />
+              <stop offset="100%" stop-color="#B8965A" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          <path d="M 8 132 A 124 124 0 0 1 132 8" stroke="url(#g1)" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+      </div>
+
+      <!-- Arco dorado inferior izquierdo -->
+      <div class="hero-arc hero-arc--bot">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g2" x1="100%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#B8965A" stop-opacity="0" />
+              <stop offset="60%" stop-color="#D4AF6E" stop-opacity="0.8" />
+              <stop offset="100%" stop-color="#B8965A" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          <path d="M 92 8 A 88 88 0 0 0 8 92" stroke="url(#g2)" stroke-width="1.2" stroke-linecap="round" />
+        </svg>
+      </div>
+
+      <!--! Puntos decorativos -->
+      <div class="hero-dots">
+        <span></span><span></span><span></span> <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+
+      <!-- Chispitas flotantes -->
+      <div class="hero-sparkle hero-sparkle--1">&#10022;</div>
+      <div class="hero-sparkle hero-sparkle--2">&#10022;</div>
+      <div class="hero-sparkle hero-sparkle--3">&#9670;</div>
+
+      <!-- Badge flotante -->
+      <div class="hero-badge">
+        <span class="hero-badge-num">2+</span>
+        <span class="hero-badge-text">años de<br />experiencia</span>
+      </div>
+
+      <!-- Imagen circular -->
+      <div class="hero-img-wrap">
+        <div class="hero-img-shadow"></div>
+        <div class="hero-img-circle">
+          <img src="./img/foto-1.jpg" alt="Manicurista profesional" />
+        </div>
+        <div class="hero-img-label"><span>&#10022; Angie Nail Artist</span></div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!--! SOBRE MÍ -->
+  <section class="about" id="about">
+    <div class="about-image reveal">
+      <div class="about-image-main">
+        <img src="./img/foto-2.jpg" alt="Manicurista" />
+      </div>
+      <div class="about-image-accent"></div>
+      <div class="about-image-tag">Est. 2019</div>
+    </div>
+    <div class="about-content">
+      <span class="section-label reveal">✦ Sobre mí</span>
+      <h2 class="section-title reveal reveal-delay-1">
+        Pasión que se<br />convierte en <em>arte</em>
+      </h2>
+      <p class="about-text reveal reveal-delay-2">
+        Soy manicurista profesional con más de 2 años de experiencia creando
+        diseños únicos que reflejan la personalidad y el estilo de cada
+        clienta. Cada uña es un lienzo y cada sesión es una experiencia
+        personalizada.
+      </p>
+      <p class="about-text reveal reveal-delay-2">
+        Me especializo en técnicas de vanguardia: nail art artístico, gel,
+        acrílico y diseños personalizados que duran semanas con ese acabado de
+        galería de lujo.
+      </p>
+      <div class="about-stats reveal reveal-delay-3">
+        <div>
+          <span class="stat-num">300+</span><span class="stat-label">Clientas felices</span>
+        </div>
+        <div>
+          <span class="stat-num">2+</span><span class="stat-label">Años de experiencia</span>
+        </div>
+        <div>
+          <span class="stat-num">100%</span><span class="stat-label">Satisfacción</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--! SERVICIOS -->
+  <section class="services" id="services">
+    <div class="services-header">
+      <div>
+        <span class="section-label">✦ Lo que ofrezco</span>
+        <h2 class="section-title">Nuestros<br /><em>Servicios</em></h2>
+      </div>
+      <p>
+        Cada servicio diseñado con precisión y cuidado para que salgas
+        sintiéndote extraordinaria.
+      </p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <span class="service-num">01</span><span class="service-icon">💅</span>
+        <div class="service-name">Uñas Acrílicas</div>
+        <p class="service-desc">
+          Extensiones de uñas fuertes y resistentes para crear formas y diseños personalizados. (Duración de 2 a 3 semanas).
+        </p>
+        <div class="service-price">Desde S/. 55</div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <span class="service-num">02</span><span class="service-icon">✨</span>
+        <div class="service-name">Polygel</div>
+        <p class="service-desc">
+          Uñas fuertes y flexibles que combinan la resistencia del acrílico y la flexibilidad del gel. (Duración de 2 a 3 semanas).
+        </p>
+        <div class="service-price">Desde S/. 50</div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <span class="service-num">03</span><span class="service-icon">💎</span>
+        <div class="service-name">Soft Gel</div>
+        <p class="service-desc">
+          Capa de protección y brillo para uñas naturales, ideal para un acabado suave y saludable. (Duración de 2 a 3 semanas).
+        </p>
+        <div class="service-price">Desde S/. 45</div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <span class="service-num">04</span><span class="service-icon">🌸</span>
+        <div class="service-name">Rubber</div>
+        <p class="service-desc">
+          Capa de protección y flexibilidad para uñas quebradizas o dañadas. (Duración de 2 a 3 semanas).
+        </p>
+        <div class="service-price">Desde S/. 50</div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <span class="service-num">05</span><span class="service-icon">✨</span>
+        <div class="service-name">Builder Gel</div>
+        <p class="service-desc">
+          Capa de grosor y fuerza para uñas débiles o quebradizas. (Duración de 2 a 3 semanas).
+        </p>
+        <div class="service-price">Desde S/. 60</div>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <span class="service-num">06</span><span class="service-icon">🌟</span>
+        <div class="service-name">Semipermanente</div>
+        <p class="service-desc">
+          Color duradero y brillante. (Dura hasta 2 semanas).
+        </p>
+        <div class="service-price">Desde S/. 30</div>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <span class="service-num">07</span><span class="service-icon">👑</span>
+        <div class="service-name">Esculpidas en Acrílico</div>
+        <p class="service-desc">
+          Uñas personalizadas y resistentes para crear formas y diseños únicos. (Duración de 2 a 3 semanas).
+        </p>
+        <div class="service-price">Desde S/. 75</div>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <span class="service-num">08</span><span class="service-icon">💎</span>
+        <div class="service-name">Semipermanente en pies</div>
+        <p class="service-desc">
+          limpieza básica en la zona de la uña y el esmaltado en gel.
+        </p>
+        <div class="service-price">Desde S/. 45</div>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <span class="service-num">09</span><span class="service-icon">👑</span>
+        <div class="service-name">Pedicure spa</div>
+        <p class="service-desc">
+          limpieza profunda , se reposa los pies en agua tibia donde se podrá limpiar por completo el pie más semipermanente en
+          color entero o francesas.
+        </p>
+        <div class="service-price">Desde S/. 70</div>
+      </div>
+    </div>
+  </section>
+
+  <!--! GALERÍA -->
+  <section class="gallery-section" id="gallery">
+    <div class="gallery-header reveal">
+      <span class="section-label">✦ Mi trabajo</span>
+      <h2 class="section-title">Galería de<br /><em>Inspiración</em></h2>
+      <p>
+        Cada diseño cuenta una historia. Explora mis creaciones y encuentra tu
+        próximo look.
+      </p>
+    </div>
+    <div class="gallery-filters reveal">
+      <button class="filter-btn active" data-filter="all">Todos</button>
+      <button class="filter-btn" data-filter="polygel">Polygel</button>
+      <button class="filter-btn" data-filter="rubber">Rubber</button>
+      <button class="filter-btn" data-filter="builder-gel">Builder Gel</button>
+      <button class="filter-btn" data-filter="soft-gel">Soft Gel</button>
+      <button class="filter-btn" data-filter="semipermanente">Semipermanente</button>
+      <button class="filter-btn" data-filter="acrilicas">Acrílicas</button>
+    </div>
+    <div class="masonry-gallery" id="galleryGrid"></div>
+    <div class="gallery-empty" id="galleryEmpty">
+      <div class="gallery-empty-icon">💅</div>
+      <h3>Pronto aquí los diseños</h3>
+      <p>Los trabajos se mostrarán aquí muy pronto</p>
+    </div>
+    <div class="gallery-load-more" id="galleryLoadMore">
+      <div class="gallery-count" id="galleryCount"></div>
+      <button class="btn-load-more" id="btnLoadMore" onclick="loadMoreGallery()">
+        <span>Ver más trabajos</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!--! PREGUNTAS FRECUENTES (FAQ) -->
+  <section class="faq" id="faq">
+    <div class="faq-container reveal">
+      <span class="section-label">✦ ¿Tienes dudas?</span>
+      <h2 class="section-title">Preguntas<br /><em>Frecuentes</em></h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Cuánto dura el servicio?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>La duración depende del servicio. Las uñas acrílicas y polygel suelen tardar entre 1.5 a 2.5 horas, mientras que el semipermanente toma unos 45-60 minutos.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Cómo debo cuidar mis uñas?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Evita usar tus uñas como herramientas, usa guantes para limpiar y aplica aceite de cutículas diariamente para mantener la hidratación y durabilidad.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Dónde estás ubicada?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Atiendo en Lima, Perú. Una vez agendada tu cita, recibirás la dirección exacta y ubicación por WhatsApp para tu comodidad.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Necesito sacar cita previa?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Sí, trabajamos exclusivamente previa cita para garantizarte un espacio dedicado y una experiencia de lujo sin esperas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--! CONTACTO -->
+  <section class="contact" id="contact">
+    <div class="contact-top reveal">
+      <span class="section-label">✦ Contáctame</span>
+      <h2 class="contact-tagline">¿Lista para tu próximo <em>look</em>?</h2>
+      <p class="contact-intro">
+        Escríbeme directamente por cualquiera de estos canales y con gusto te
+        agendo una cita.
+      </p>
+    </div>
+    <div class="contact-info-row reveal reveal-delay-1">
+      <div class="contact-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path
+            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+        </svg>
+        <span>Lima, Perú</span>
+      </div>
+      <div class="contact-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <circle cx="12" cy="12" r="10" />
+          <polyline points="12 6 12 12 16 14" />
+        </svg>
+        <span>Lun – Sáb: 9am – 7pm</span>
+      </div>
+    </div>
+    <div class="social-cards reveal reveal-delay-2">
+      <a href="https://wa.me/51999999999" target="_blank" class="social-card social-card--wpp">
+        <div class="social-card-bg"></div>
+        <div class="social-card-inner">
+          <div class="social-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+          </div>
+          <div class="social-card-content">
+            <span class="social-card-network">WhatsApp</span><span class="social-card-handle">+51 999 999
+              999</span><span class="social-card-cta">Escríbeme ahora →</span>
+          </div>
+        </div>
+      </a>
+      <a href="https://instagram.com/lumiere.nails" target="_blank" class="social-card social-card--ig">
+        <div class="social-card-bg"></div>
+        <div class="social-card-inner">
+          <div class="social-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+          </div>
+          <div class="social-card-content">
+            <span class="social-card-network">Instagram</span><span
+              class="social-card-handle">@lumiere.nails</span><span class="social-card-cta">Ver mi perfil →</span>
+          </div>
+        </div>
+      </a>
+      <a href="https://facebook.com/lumierenails" target="_blank" class="social-card social-card--fb">
+        <div class="social-card-bg"></div>
+        <div class="social-card-inner">
+          <div class="social-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+          </div>
+          <div class="social-card-content">
+            <span class="social-card-network">Facebook</span><span class="social-card-handle">Angie Nails</span><span
+              class="social-card-cta">Seguir página →</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="#" class="footer-logo">Angie <span>Nails</span></a>
+    <p class="footer-copy">
+      © 2025 Angie Nails. Todos los derechos reservados.
+    </p>
+    <div class="footer-links">
+      <a href="#about">Nosotros</a>
+      <a href="#services">Servicios</a>
+      <a href="#gallery">Galería</a>
+      <a href="#faq">Dudas</a>
+      <a href="#contact">Contacto</a>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-nav lightbox-prev" onclick="lightboxNav(-1)">
+      ‹
+    </button>
+    <button class="lightbox-nav lightbox-next" onclick="lightboxNav(1)">
+      ›
+    </button>
+    <div class="lightbox-inner">
+      <img id="lightboxImg" src="" alt="" />
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+
+  <!-- BOTON WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/51999999999" target="_blank" class="wa-float" aria-label="WhatsApp">
+    <div class="wa-float-tooltip">¿Te ayudo con tu diseño?</div>
+    <svg viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+</body>
+
+</html>
