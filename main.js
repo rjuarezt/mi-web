@@ -1,5 +1,5 @@
 /* ============================================
-   LUMIÈRE NAILS — main.js
+   ANGIE NAILS STUDIO — main.js
    ============================================ */
 
 /* --------------------------------------------------
@@ -226,8 +226,8 @@ function createGalleryItem(item, globalIndex, animDelay = 0) {
   div.className = `gallery-item ${layoutClass}`.trim();
   div.style.animationDelay = `${animDelay}ms`;
 
-  const waMessage = encodeURIComponent(`Hola Angie! Me encantó este diseño: ${item.name}. ¿Me podrías dar una cotización? ✨`);
-  const waUrl = `https://wa.me/51900350711?text=${waMessage}`; // Usando el número de contacto del sitio
+  const waMessage = encodeURIComponent(`Hola Angie Nails Studio! Me encantó este diseño: ${item.name}. ¿Me podrías dar una cotización? ✨`);
+  const waUrl = `https://wa.me/51936926560?text=${waMessage}`;
 
   div.innerHTML = `
     <img src="${item.src}" alt="${item.name}" loading="lazy">

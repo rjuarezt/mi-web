@@ -1,5 +1,5 @@
 /* ============================================
-  !LUMIERE NAILS — styles.css
+  !ANGIE NAILS STUDIO — styles.css
    ============================================ */
 :root {
   --cream: #f9f3ee;
@@ -44,11 +44,12 @@
 
 .preloader-logo {
   font-family: "Cormorant Garamond", serif;
-  font-size: 32px;
-  letter-spacing: 8px;
+  font-size: 30px;
+  letter-spacing: 6px;
   text-transform: uppercase;
   color: var(--dark);
   margin-bottom: 20px;
+  white-space: nowrap;
 }
 
 .preloader-logo span {
@@ -190,14 +191,15 @@ nav.scrolled {
 
 .nav-logo {
   font-family: "Cormorant Garamond", serif;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 300;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   color: var(--dark);
   text-decoration: none;
   text-transform: uppercase;
   position: relative;
   z-index: 101;
+  white-space: nowrap;
 }
 
 .nav-logo span {
@@ -1637,12 +1639,12 @@ nav.scrolled {
   background: linear-gradient(135deg, #075e54, #128c7e);
 }
 
-.social-card--ig .social-card-bg {
-  background: linear-gradient(135deg, #833ab4, #fd1d1d 50%, #fcb045);
+.social-card--map .social-card-bg {
+  background: linear-gradient(135deg, #8c7155, #b8965a);
 }
 
-.social-card--fb .social-card-bg {
-  background: linear-gradient(135deg, #1877f2, #0d5db5);
+.social-card--booking .social-card-bg {
+  background: linear-gradient(135deg, #c9967a, #b8965a);
 }
 
 .social-card-inner {
@@ -1739,12 +1741,12 @@ nav.scrolled {
   background: #25d366;
 }
 
-.social-card--ig::after {
-  background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045);
+.social-card--map::after {
+  background: var(--gold);
 }
 
-.social-card--fb::after {
-  background: #1877f2;
+.social-card--booking::after {
+  background: var(--rose);
 }
 
 .social-card:hover::after {
@@ -1975,8 +1977,8 @@ footer {
   }
 
   .nav-logo {
-    font-size: 21px;
-    letter-spacing: 3px;
+    font-size: 17px;
+    letter-spacing: 1.6px;
   }
 
   .nav-toggle {
@@ -2298,7 +2300,7 @@ footer {
 
   /* ── Gallery mobile Header ────────────────── */
   .gallery-section {
-    padding: 88px 20px 64px;
+    padding: 88px 14px 64px;
     width: 100%;
     overflow-x: hidden;
   }
@@ -2306,7 +2308,7 @@ footer {
   .gallery-header {
     text-align: center; /* Balanced centering for luxury look */
     margin-bottom: 48px;
-    max-width: 360px;
+    max-width: 380px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -2327,34 +2329,51 @@ footer {
     gap: 8px;
     margin-bottom: 28px;
     top: 54px; /* Matches smaller nav */
-    padding: 8px 0;
+    padding: 8px 2px;
+    justify-content: center;
+    overflow-x: visible;
+    flex-wrap: wrap;
   }
 
   .filter-btn {
-    padding: 10px 14px;
-    font-size: 11px;
-    letter-spacing: 1.2px;
+    flex: 1 1 calc(33.333% - 8px);
+    min-width: 104px;
+    max-width: 160px;
+    padding: 10px 8px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-align: center;
+    white-space: nowrap;
   }
 
   .masonry-gallery {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
+    gap: 14px;
   }
 
   .gallery-item,
-  .gallery-item--feature,
   .gallery-item--tall {
     grid-column: span 1;
     height: min(68vw, 430px);
     border-radius: 14px;
   }
 
+  .gallery-item--feature {
+    grid-column: 1 / -1;
+    height: min(118vw, 560px);
+    border-radius: 18px;
+  }
+
+  .gallery-item--feature .gallery-item-title {
+    font-size: 30px;
+  }
+
   /* Overlay siempre visible en móvil para que vean el botón de WhatsApp directo */
   .gallery-item-overlay {
     opacity: 1;
     background: linear-gradient(to top, rgba(15, 10, 5, 0.9) 0%, rgba(15, 10, 5, 0.18) 64%, transparent 100%);
-    padding: 14px 12px;
+    padding: 16px 14px;
     justify-content: flex-end;
   }
 
@@ -2380,8 +2399,8 @@ footer {
   }
 
   .btn-item-view {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     background: rgba(255, 255, 255, 0.15);
   }
 
@@ -2391,8 +2410,8 @@ footer {
   }
 
   .btn-item-wa {
-    padding: 9px 12px;
-    font-size: 12px;
+    padding: 10px 12px;
+    font-size: 13px;
     gap: 4px;
   }
 
@@ -2614,7 +2633,7 @@ footer {
 @media (max-width: 480px) {
   /* Gallery en pantallas muy pequeñas: 1 columna para que cada foto se vea GRANDE */
   .gallery-section {
-    padding: 64px 16px 52px;
+    padding: 72px 14px 56px;
   }
 
   .masonry-gallery {
@@ -2626,7 +2645,11 @@ footer {
   .gallery-item--feature,
   .gallery-item--tall {
     grid-column: span 1;
-    height: min(116vw, 520px);
+    height: min(118vw, 540px);
+  }
+
+  .gallery-item--feature {
+    height: min(130vw, 580px);
   }
 
   .gallery-item img {
@@ -2664,15 +2687,23 @@ footer {
   }
 
   .filter-btn {
-    flex: 1 1 calc(50% - 6px);
-    min-width: 130px;
+    flex: 1 1 calc(50% - 8px);
+    min-width: 0;
+    max-width: none;
+    padding: 11px 8px;
+    font-size: 10px;
   }
 
   .gallery-item-title {
-    font-size: 16px;
+    font-size: 22px;
+    white-space: normal;
   }
 
   .btn-item-wa {
     font-size: 13px;
+  }
+
+  .gallery-item-overlay {
+    padding: 18px 16px;
   }
 }
