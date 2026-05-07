@@ -40,20 +40,25 @@
 
 .preloader-content {
   text-align: center;
+  width: min(86vw, 520px);
 }
 
 .preloader-logo {
   font-family: "Cormorant Garamond", serif;
-  font-size: 30px;
-  letter-spacing: 6px;
+  font-size: clamp(30px, 8vw, 42px);
+  letter-spacing: 5px;
   text-transform: uppercase;
   color: var(--dark);
   margin-bottom: 20px;
-  white-space: nowrap;
+  line-height: 1.15;
 }
 
 .preloader-logo span {
   color: var(--gold);
+  display: block;
+  font-size: 0.74em;
+  letter-spacing: 4px;
+  margin-top: 8px;
 }
 
 .preloader-line {
@@ -1956,6 +1961,27 @@ footer {
    RESPONSIVE — MOBILE (≤768px)
    ============================================ */
 @media (max-width: 768px) {
+  .preloader-content {
+    width: min(88vw, 360px);
+    padding: 0 18px;
+  }
+
+  .preloader-logo {
+    font-size: clamp(32px, 10vw, 44px);
+    letter-spacing: 3px;
+  }
+
+  .preloader-logo span {
+    font-size: 0.68em;
+    letter-spacing: 2.4px;
+    margin-top: 10px;
+  }
+
+  .preloader-text {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
   body {
     cursor: auto;
     font-size: 16px;
