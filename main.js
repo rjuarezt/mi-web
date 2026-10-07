@@ -240,16 +240,16 @@ function createWhatsAppDesignUrl(item, requestType = "este diseño") {
 
 function createGalleryItem(item, globalIndex, animDelay = 0) {
   const div = document.createElement("div");
-  const layoutClass =
-    globalIndex % 9 === 0 ? "gallery-item--feature" :
-    globalIndex % 7 === 0 ? "gallery-item--tall" : "";
-  div.className = `gallery-item ${layoutClass}`.trim();
+  div.className = "gallery-item catalog-card";
   div.style.animationDelay = `${animDelay}ms`;
 
   const waUrl = createWhatsAppDesignUrl(item);
 
   div.innerHTML = `
-    <img src="${item.src}" alt="${item.name}" loading="lazy">
+    <button type="button" class="catalog-photo" aria-label="Ampliar ${item.name}">
+      <img src="${item.src}" alt="${item.name}" loading="lazy" decoding="async">
+      <span class="catalog-zoom" aria-hidden="true">↗</span>
+    </button>
     <div class="gallery-item-overlay">
       <div class="gallery-item-top">
         <span class="gallery-item-tag">${item.category.replace("-", " ")}</span>
@@ -265,7 +265,7 @@ function createGalleryItem(item, globalIndex, animDelay = 0) {
       </div>
     </div>
   `;
-  div.addEventListener("click", () => {
+  div.querySelector(".catalog-photo").addEventListener("click", () => {
     lightboxImages = filteredItems;
     openLightbox(globalIndex);
   });
@@ -274,13 +274,15 @@ function createGalleryItem(item, globalIndex, animDelay = 0) {
 
 function createMostRequestedItem(item, index) {
   const div = document.createElement("div");
-  div.className = index === 0 ? "requested-card requested-card--main" : "requested-card";
+  div.className = "requested-card catalog-card";
 
   const waUrl = createWhatsAppDesignUrl(item, "este diseño destacado");
 
   div.innerHTML = `
-    <img src="${item.src}" alt="${item.name}" loading="lazy">
-    <div class="requested-card-shade"></div>
+    <button type="button" class="catalog-photo" aria-label="Ampliar ${item.name}">
+      <img src="${item.src}" alt="${item.name}" loading="lazy" decoding="async">
+      <span class="catalog-zoom" aria-hidden="true">↗</span>
+    </button>
     <div class="requested-card-content">
       <span class="requested-card-tag">${item.category.replace("-", " ")}</span>
       <h4>${item.name}</h4>
@@ -289,7 +291,7 @@ function createMostRequestedItem(item, index) {
     </div>
   `;
 
-  div.addEventListener("click", () => {
+  div.querySelector(".catalog-photo").addEventListener("click", () => {
     lightboxImages = mostRequestedImages;
     openLightbox(index);
   });
@@ -368,11 +370,24 @@ function loadMoreGallery() {
    5. FILTROS
 -------------------------------------------------- */
 document.querySelectorAll(".filter-btn").forEach((btn) => {
+  const filter = btn.dataset.filter;
+  const count = filter === "all"
+    ? galleryImages.length
+    : galleryImages.filter((item) => item.category === filter).length;
+  const badge = document.createElement("span");
+  badge.className = "filter-count";
+  badge.textContent = count;
+  btn.append(" ", badge);
+  btn.setAttribute("aria-pressed", String(btn.classList.contains("active")));
   btn.addEventListener("click", () => {
     document
       .querySelectorAll(".filter-btn")
-      .forEach((b) => b.classList.remove("active"));
+      .forEach((b) => {
+        b.classList.remove("active");
+        b.setAttribute("aria-pressed", "false");
+      });
     btn.classList.add("active");
+    btn.setAttribute("aria-pressed", "true");
     currentFilter = btn.dataset.filter;
     renderGallery(currentFilter);
   });
@@ -381,19 +396,32 @@ document.querySelectorAll(".filter-btn").forEach((btn) => {
 /* --------------------------------------------------
    6. LIGHTBOX
 -------------------------------------------------- */
+let lightboxReturnFocus = null;
+let lightboxPreviousOverflow = "";
+
 function openLightbox(index) {
+  const lightbox = document.getElementById("lightbox");
+  if (!lightbox.classList.contains("open")) {
+    lightboxReturnFocus = document.activeElement;
+    lightboxPreviousOverflow = document.body.style.overflow;
+  }
   lightboxIndex = index;
   const item = lightboxImages[index];
   document.getElementById("lightboxImg").src = item.src;
+  document.getElementById("lightboxImg").alt = item.name;
   document.getElementById("lightboxCaption").textContent =
     `${item.name} — ${item.category.replace("-", " ")}`;
-  document.getElementById("lightbox").classList.add("open");
+  document.getElementById("lightboxWhatsApp").href = createWhatsAppDesignUrl(item);
+  document.getElementById("lightboxCounter").textContent = `${index + 1} / ${lightboxImages.length}`;
+  lightbox.classList.add("open");
   document.body.style.overflow = "hidden";
+  lightbox.querySelector(".lightbox-close").focus();
 }
 
 function closeLightbox() {
   document.getElementById("lightbox").classList.remove("open");
-  document.body.style.overflow = "";
+  document.body.style.overflow = lightboxPreviousOverflow;
+  lightboxReturnFocus?.focus();
 }
 
 function lightboxNav(dir) {
@@ -409,6 +437,18 @@ document.getElementById("lightbox").addEventListener("click", (e) => {
 
 document.addEventListener("keydown", (e) => {
   if (!document.getElementById("lightbox").classList.contains("open")) return;
+  if (e.key === "Tab") {
+    const controls = [...document.querySelectorAll("#lightbox button, #lightbox a[href]")];
+    const first = controls[0];
+    const last = controls.at(-1);
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
   if (e.key === "Escape") closeLightbox();
   if (e.key === "ArrowLeft") lightboxNav(-1);
   if (e.key === "ArrowRight") lightboxNav(1);

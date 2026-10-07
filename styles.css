@@ -3138,6 +3138,226 @@ footer {
   }
 }
 
+/* Catálogo: fotografías despejadas e información bajo cada modelo. */
+.gallery-section .masonry-gallery,
+.gallery-section .most-requested-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+}
+
+.gallery-section .catalog-card {
+  grid-column: auto;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid rgba(184, 150, 90, 0.2);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: auto;
+  animation: none;
+}
+
+.gallery-section .catalog-card::before,
+.gallery-section .catalog-card::after {
+  display: none;
+}
+
+.catalog-photo {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--nude);
+  cursor: zoom-in;
+}
+
+.gallery-section .catalog-photo img {
+  position: static;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+}
+
+.catalog-zoom {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  background: rgba(253, 250, 247, 0.94);
+  color: var(--dark);
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+.gallery-section .catalog-card .gallery-item-overlay,
+.gallery-section .catalog-card .requested-card-content {
+  position: static;
+  inset: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background: none;
+  color: var(--dark);
+  opacity: 1;
+}
+
+.catalog-card .gallery-item-content {
+  transform: none;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.catalog-card .gallery-item-top { display: block; }
+
+.catalog-card .gallery-item-tag,
+.catalog-card .requested-card-tag {
+  align-self: flex-start;
+  margin: 0;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  color: #806139;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+}
+
+.catalog-card .gallery-item-title,
+.catalog-card h4 {
+  color: var(--dark);
+  font-size: 27px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0;
+  margin: 0 0 12px;
+  white-space: normal;
+  text-shadow: none;
+}
+
+.catalog-card p { color: var(--muted); }
+.catalog-card .gallery-item-actions { margin-top: auto; }
+
+.catalog-card .btn-item-wa,
+.catalog-card .requested-card-cta {
+  margin-top: auto;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  font-size: 12px;
+  border-radius: 8px;
+  background: var(--dark);
+  color: var(--white);
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.catalog-card .btn-item-wa span { max-width: none; }
+.catalog-card .btn-item-wa::before,
+.catalog-card .requested-card-cta::before { display: none; }
+.catalog-card .btn-item-wa:hover,
+.catalog-card .requested-card-cta:hover { background: var(--dark2); }
+.catalog-photo:focus-visible { outline: 3px solid var(--gold); outline-offset: -3px; }
+
+.gallery-guide {
+  max-width: 1180px;
+  margin: 0 auto 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.filter-count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 24px;
+  padding: 2px 5px;
+  border-radius: 20px;
+  background: rgba(184, 150, 90, 0.14);
+  font-size: 10px;
+  letter-spacing: 0;
+}
+
+.lightbox .lightbox-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: min(80vw, 760px);
+  max-height: calc(100dvh - 100px);
+  border: 0;
+  box-shadow: none;
+}
+
+.lightbox .lightbox-inner img {
+  min-height: 0;
+  max-height: calc(100dvh - 250px);
+  border-radius: 10px;
+}
+
+.lightbox .lightbox-caption {
+  position: static;
+  padding: 0;
+  width: auto;
+  color: var(--white);
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+.lightbox-counter { color: var(--nude); font-size: 12px; }
+.lightbox-booking {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: var(--cream);
+  color: var(--dark);
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+.lightbox-booking:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+
+@media (max-width: 768px) {
+  .gallery-section .masonry-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .gallery-section .most-requested-grid {
+    display: grid;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: min(78vw, 340px);
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 4px;
+    padding: 4px 4px 20px;
+    margin-inline: -4px;
+  }
+  .most-requested-grid .catalog-card { scroll-snap-align: start; }
+  .gallery-section .catalog-card .gallery-item-overlay { padding: 12px; }
+  .catalog-card .gallery-item-title { font-size: 21px; }
+  .catalog-card .btn-item-wa { font-size: 11px; padding-inline: 6px; gap: 4px; }
+  .catalog-card .gallery-item-tag { font-size: 9px; letter-spacing: 0.6px; }
+  .lightbox .lightbox-inner { max-width: 94vw; }
+}
+
 /* Pulido visual y controles táctiles de la galería */
 .gallery-section {
   background:

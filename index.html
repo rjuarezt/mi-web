@@ -289,10 +289,11 @@
     <div class="most-requested reveal">
       <div class="most-requested-head">
         <span>Favoritos de clientas</span>
-        <h3>Diseños mas pedidos</h3>
+        <h3>Diseños más pedidos</h3>
       </div>
       <div class="most-requested-grid" id="mostRequestedGrid"></div>
     </div>
+    <p class="gallery-guide">Toca una foto para ver los detalles. Elige tu favorito y consúltalo por WhatsApp.</p>
     <div class="gallery-filters reveal">
       <button class="filter-btn active" data-filter="all">Todos</button>
       <button class="filter-btn" data-filter="polygel">Polygel</button>
@@ -454,17 +455,19 @@
   </footer>
 
   <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-    <button class="lightbox-nav lightbox-prev" onclick="lightboxNav(-1)">
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Detalle del diseño">
+    <button class="lightbox-close" aria-label="Cerrar imagen" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Diseño anterior" onclick="lightboxNav(-1)">
       ‹
     </button>
-    <button class="lightbox-nav lightbox-next" onclick="lightboxNav(1)">
+    <button class="lightbox-nav lightbox-next" aria-label="Diseño siguiente" onclick="lightboxNav(1)">
       ›
     </button>
     <div class="lightbox-inner">
       <img id="lightboxImg" src="" alt="" />
       <div class="lightbox-caption" id="lightboxCaption"></div>
+      <span class="lightbox-counter" id="lightboxCounter"></span>
+      <a class="lightbox-booking" id="lightboxWhatsApp" target="_blank" rel="noopener noreferrer">Consultar este diseño por WhatsApp</a>
     </div>
   </div>
 
