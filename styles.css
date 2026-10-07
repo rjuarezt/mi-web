@@ -3137,3 +3137,138 @@ footer {
     padding: 12px 10px;
   }
 }
+
+/* Pulido visual y controles táctiles de la galería */
+.gallery-section {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(232, 213, 196, 0.48), transparent 48%),
+    linear-gradient(180deg, #fdfaf7 0%, #f9f3ee 54%, #fdfaf7 100%);
+}
+
+.gallery-header {
+  max-width: 720px;
+  margin-bottom: 38px;
+}
+
+.gallery-header .section-label {
+  justify-content: center;
+}
+
+.gallery-header .section-title {
+  line-height: 1.02;
+}
+
+.most-requested-head {
+  align-items: center;
+  border-bottom-color: rgba(184, 150, 90, 0.28);
+}
+
+.requested-card {
+  border-radius: 20px;
+  box-shadow: 0 16px 38px rgba(26, 18, 8, 0.12);
+}
+
+.requested-card::before {
+  border-radius: 10px;
+}
+
+.requested-card::after {
+  display: none;
+}
+
+.requested-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(26, 18, 8, 0.18);
+}
+
+.gallery-item {
+  border-radius: 18px;
+  box-shadow: 0 14px 36px rgba(26, 18, 8, 0.12);
+}
+
+.gallery-item::before {
+  inset: 8px;
+  border-radius: 12px;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 48px rgba(26, 18, 8, 0.18);
+}
+
+.gallery-item:focus-within .gallery-item-overlay {
+  opacity: 1;
+}
+
+.filter-btn:focus-visible,
+.btn-load-more:focus-visible,
+.gallery-item a:focus-visible,
+.requested-card a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  .gallery-section {
+    padding-inline: 18px;
+  }
+
+  .gallery-header {
+    margin-bottom: 34px;
+  }
+
+  .most-requested-grid {
+    gap: 12px;
+  }
+
+  .gallery-filters {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(184, 150, 90, 0.5) transparent;
+    padding: 8px 4px 14px;
+    margin-inline: -4px;
+  }
+
+  .filter-btn {
+    flex: 0 0 auto;
+  }
+
+  .masonry-gallery {
+    gap: 12px;
+  }
+
+  .gallery-item,
+  .gallery-item--feature,
+  .gallery-item--tall {
+    border-radius: 14px;
+    height: min(62vw, 340px);
+  }
+
+  .gallery-item::before {
+    inset: 6px;
+    border-radius: 9px;
+  }
+
+  .gallery-item:hover {
+    transform: none;
+  }
+
+  .requested-card,
+  .requested-card--main {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-section *,
+  .gallery-section *::before,
+  .gallery-section *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
