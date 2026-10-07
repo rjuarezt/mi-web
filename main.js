@@ -2,6 +2,22 @@
    ANGIE NAILS STUDIO — main.js
    ============================================ */
 
+/* Prioriza los trabajos en el orden visual y de lectura de la página. */
+const primarySections = [
+  "gallery",
+  "services",
+  "contact",
+  "about",
+  "home",
+  "faq",
+];
+const sectionsToReorder = primarySections
+  .map((id) => document.getElementById(id))
+  .filter(Boolean);
+const footer = document.querySelector("footer");
+if (footer) sectionsToReorder.push(footer);
+sectionsToReorder.forEach((section) => document.body.append(section));
+
 /* --------------------------------------------------
    1. CUSTOM CURSOR (solo desktop)
 -------------------------------------------------- */
