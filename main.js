@@ -2,13 +2,6 @@
    ANGIE NAILS STUDIO — main.js
    ============================================ */
 
-/* Muestra primero la galería sin alterar el diseño del resto de secciones. */
-const navbarForLayout = document.getElementById("navbar");
-const galleryForLayout = document.getElementById("gallery");
-if (navbarForLayout && galleryForLayout) {
-  navbarForLayout.after(galleryForLayout);
-}
-
 /* --------------------------------------------------
    1. CUSTOM CURSOR (solo desktop)
 -------------------------------------------------- */
