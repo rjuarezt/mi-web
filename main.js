@@ -2,23 +2,11 @@
    ANGIE NAILS STUDIO — main.js
    ============================================ */
 
-/* Prioriza los trabajos en el orden visual y de lectura de la página. */
-const primarySections = [
-  "gallery",
-  "services",
-  "contact",
-  "about",
-  "home",
-  "faq",
-];
-const sectionsToReorder = primarySections
-  .map((id) => document.getElementById(id))
-  .filter(Boolean);
-const footer = document.querySelector("footer");
-if (footer) sectionsToReorder.push(footer);
+/* Muestra primero la galería sin alterar el diseño del resto de secciones. */
 const navbarForLayout = document.getElementById("navbar");
-if (navbarForLayout && sectionsToReorder.length > 0) {
-  navbarForLayout.after(...sectionsToReorder);
+const galleryForLayout = document.getElementById("gallery");
+if (navbarForLayout && galleryForLayout) {
+  navbarForLayout.after(galleryForLayout);
 }
 
 /* --------------------------------------------------
