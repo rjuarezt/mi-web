@@ -16,7 +16,10 @@ const sectionsToReorder = primarySections
   .filter(Boolean);
 const footer = document.querySelector("footer");
 if (footer) sectionsToReorder.push(footer);
-sectionsToReorder.forEach((section) => document.body.append(section));
+const navbarForLayout = document.getElementById("navbar");
+if (navbarForLayout && sectionsToReorder.length > 0) {
+  navbarForLayout.after(...sectionsToReorder);
+}
 
 /* --------------------------------------------------
    1. CUSTOM CURSOR (solo desktop)
